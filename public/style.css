@@ -20,6 +20,29 @@ header {
   justify-content: space-between;
 }
 
+ul.breadcrumb {
+  padding: 10px 16px;
+  margin-bottom: 15px;
+  list-style: none;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: teal;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
 .title {
   font-size: 2rem;
   font-size: 600;
@@ -52,7 +75,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 30px;
 }
 
 .right {
@@ -80,4 +103,105 @@ header {
   padding: 15px;
   margin: 0 auto;
   border-bottom: 3px solid #a9a9a9;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.product-form .form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input,
+select,
+textarea {
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.product-form textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+#product-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#product-table td,
+#product-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#product-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#product-table tr:hover {
+  background-color: #ddd;
+}
+
+#product-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: teal;
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+  padding: 15px;
+}
+
+.table-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.btn {
+  padding: 10px;
+  color: white;
+}
+
+.bg-success {
+  background-color: green;
+}
+
+.bg-danger {
+  background-color: red;
 }

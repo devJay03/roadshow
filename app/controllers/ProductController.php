@@ -1,20 +1,25 @@
 <?php
 
 require_once MODEL . 'Product.php';
+require_once MODEL . 'Category.php';
+require_once APP . 'Request/request.php';
+
 
 class ProductController
 {
 
   protected $model;
+  protected $category;
 
   public function __construct()
   {
     $this->model = new Product;
+    $this->category = new Category;
   }
   public function index()
   {
-    $products = $this->model->all();
-    include_once ROOT . "app/views/products/index.php";
+    $categories = $this->category->all();
+    include_once ROOT . "app/views/product.php";
   }
 
   public function all()
@@ -27,9 +32,29 @@ class ProductController
     return $this->model->edit($id);
   }
 
-  public function add()
+  public function store()
   {
-    include_once VIEW . "products/add.php";
+    $data = Request::all();
+    $product = $this->model->store($data);
+    if ($product) {
+      return ['success' => true];
+    } else {
+      return ['success' => false];
+    }
+  }
+
+  public function update($id)
+  {
+    $data = Request::all();
+    $data['id'] = $id;
+
+    $product = $this->model->update($data);
+    if ($product) {
+      return ['success' => true];
+    } else {
+      return ['success' => false];
+    }
+
   }
 
 

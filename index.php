@@ -9,6 +9,7 @@ include 'config/router.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roadshow</title>
   <link rel="stylesheet" href="public/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@ include 'config/router.php';
     $param = $GLOBALS['param'] ?? null;
 
     $cp = "app/controllers/$cn.php";
-    $vp = "app/views/" . strtolower(str_replace('Controller', '', $cn)) . ".php";
+    $vp = "app/views/" . strtolower(str_replace('Controller', '', subject: $cn)) . ".php";
 
     if (file_exists($cp)) {
       require_once $cp;
